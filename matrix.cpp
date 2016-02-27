@@ -13,7 +13,8 @@ typedef unsigned char BYTE;
 int find_cell(BYTE** matrix,int e, int w, int b){
 	int cell=0;
 	cell = matrix[e][w];
-	if( cell << (7-b) == 0x80) cell = 1;
+	cell <<= (7 - b);
+	cell >>= (7 - b);
 	return cell;
 }
 
