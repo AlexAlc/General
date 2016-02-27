@@ -31,11 +31,15 @@ void free_matrix(int n, BYTE ** matrix) {
 
 BYTE** allocate_matrix(int* e, int* w) {
 
+	BYTE** matrix = new BYTE*[*e];
+	for (int i = 0; i < *e; ++i)
+		matrix[i] = new BYTE[*w];
+
 	//malloc de un puntero de *e filas y *w columnas
-	 BYTE** matrix = (BYTE**)malloc(sizeof(BYTE)* *e);
-	for (int i = 0; i<*e; i++) {
-		matrix[i] = (BYTE*)malloc(sizeof(BYTE)* *w);
-	}
+	//BYTE** matrix = (BYTE**)malloc(sizeof(BYTE)* *e);
+	//for (int i = 0; i<*e; i++) {
+	//	matrix[i] = (BYTE*)malloc(sizeof(BYTE)* *w);
+	//}
 	//Inicializar a 0 todos los words
 	for (int i = 0; i<*e; i++) {
 		for (int j = 0; j<*w; j++) {
